@@ -44,6 +44,7 @@ namespace WebShop.Controllers
                 OrderId = Guid.NewGuid().ToString()
             };
             await Startup.endpointInstance.Send(command).ConfigureAwait(false);
+            @ViewData["OrderId"] = command.OrderId;
             return View();
         }
     }
