@@ -1,0 +1,16 @@
+﻿{
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "emitEntryPoint": true
+  },
+
+  "dependencies": {
+    "Messages": "1.0.0-*",
+    "NServiceBus": "6.1.2",
+    "NServiceBus.SqlServer": "3.0.1"
+  },
+
+  "frameworks": {
+    "net46": {}
+  }
+}

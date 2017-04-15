@@ -1,0 +1,11 @@
+﻿{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "NServiceBus": "6.1.2"
+  },
+
+  "frameworks": {
+    "net46": {}
+  }
+}
