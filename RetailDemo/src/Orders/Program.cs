@@ -29,19 +29,6 @@ namespace Orders
             endpointConfiguration.EnableInstallers();
             endpointConfiguration.DisableFeature<Heartbeats>();
 
-            var recoverability = endpointConfiguration.Recoverability();
-            recoverability.Immediate(
-                customizations: immediate =>
-                {
-                    immediate.NumberOfRetries(0);
-                });
-
-            recoverability.Delayed(
-                customizations: delayed =>
-                {
-                    delayed.NumberOfRetries(0);
-                });
-
             var endpointInstance = await Endpoint.Start(endpointConfiguration)
                 .ConfigureAwait(false);
 
