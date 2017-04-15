@@ -13,7 +13,7 @@ namespace Billing
         public Task Handle(OrderPlaced message, IMessageHandlerContext context)
         {
             logger.Info($"Received OrderPlaced, OrderId = {message.OrderId}");
-            logger.Info("Charching credit card...");
+            logger.Info("Charging credit card...");
             Thread.Sleep(20*1000);
 
             var orderBilled = new OrderBilled
