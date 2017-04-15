@@ -26,7 +26,6 @@ namespace Stock
 
             var routing = transport.Routing();
             routing.RegisterPublisher(typeof(OrderPlaced), "Orders");
-            routing.RegisterPublisher(typeof(OrderBilled), "Billing");
 
             endpointConfiguration.UseSerialization<JsonSerializer>();
             endpointConfiguration.UsePersistence<InMemoryPersistence>();
