@@ -24,9 +24,6 @@ namespace Stock
             var transport = endpointConfiguration.UseTransport<SqlServerTransport>();
             transport.ConnectionString(@"Data Source=.\SQLEXPRESS;Initial Catalog=nservicetest;Integrated Security=true;");
 
-            var routing = transport.Routing();
-            routing.RegisterPublisher(typeof(OrderPlaced), "Orders");
-
             endpointConfiguration.UseSerialization<JsonSerializer>();
             endpointConfiguration.UsePersistence<InMemoryPersistence>();
             endpointConfiguration.SendFailedMessagesTo("error");
