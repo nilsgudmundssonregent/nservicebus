@@ -64,19 +64,7 @@ namespace WebShop
 
         private void ConfigureNServiceBus()
         {
-            var endpointConfiguration = new EndpointConfiguration("Webshop");
-            var transport = endpointConfiguration.UseTransport<SqlServerTransport>();
-            transport.ConnectionString(@"Data Source=.\SQLEXPRESS;Initial Catalog=nservicetest;Integrated Security=true;");
 
-            var routing = transport.Routing();
-            routing.RouteToEndpoint(typeof(PlaceOrder), "Orders");
-
-            endpointConfiguration.UseSerialization<JsonSerializer>();
-            endpointConfiguration.UsePersistence<InMemoryPersistence>();
-            endpointConfiguration.SendFailedMessagesTo("error");
-            endpointConfiguration.EnableInstallers();
-            endpointInstance = Endpoint.Start(endpointConfiguration)
-                .ConfigureAwait(false).GetAwaiter().GetResult();
         }
     }
 }
