@@ -17,6 +17,8 @@ namespace Orders
         static async Task AsyncMain()
         {
             Console.Title = "Orders";
+
+            Console.ReadKey();
         }
     }
 }

@@ -38,13 +38,6 @@ namespace WebShop.Controllers
         [HttpPost]
         public async Task<IActionResult> Buy()
         {
-            Thread.Sleep(10*1000);
-            var command = new PlaceOrder
-            {
-                OrderId = Guid.NewGuid().ToString()
-            };
-            await Startup.endpointInstance.Send(command).ConfigureAwait(false);
-            @ViewData["OrderId"] = command.OrderId;
             return View();
         }
     }
